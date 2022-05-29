@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:quizzler/quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-void main() => runApp(const Quizzler());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+  runApp(const Quizzler());
+}
 
 class Quizzler extends StatelessWidget {
   const Quizzler({Key? key}) : super(key: key);
